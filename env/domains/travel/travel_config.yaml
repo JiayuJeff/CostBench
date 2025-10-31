@@ -1,0 +1,48 @@
+domain: "travel"
+
+main_subtasks:
+  location:
+    dimensions:
+      category: ["city", "seaside", "mountain", "village"]
+      tier: ["major_metropolis", "mid_sized_city", "small_town", "secluded_area"]
+      style: ["historic_and_traditional", "modern_and_cosmopolitan", "natural_and_serene", "entertainment_and_vibrant"]
+      feature_package: ["architectural_marvel", "religious_center", "signature_theme_city", "culinary_capital"]
+
+  transportation:
+    dimensions:
+      category: ["flight", "train", "bus", "car_rental"]
+      tier: ["luxury_class", "business_class", "standard_class", "budget_class"]
+      style: ["speed_priority", "comfort_priority", "scenic_route", "schedule_flexibility_priority"]
+      feature_package: ["onboard_connectivity_and_power", "full_meal_and_beverage_service", "special_luggage_allowance", "lie_flat_or_sleeper_facility"]
+
+  accommodation:
+    dimensions:
+      category: ["hotel", "campsite", "homestay", "hostel"]
+      tier: ["luxury_five_star", "business_four_star", "standard_three_star", "budget_basic"]
+      style: ["centrality_priority", "scenery_priority", "convenience_priority", "tranquility_priority"]
+      feature_package: ["resort_style_recreation", "specialized_pet_friendly_services", "comprehensive_business_services", "self_catering_and_laundry"]
+
+  attraction:
+    dimensions:
+      category: ["historic_site", "museum_or_gallery", "natural_wonder", "amusement_or_entertainment"]
+      tier: ["global_landmark", "national_treasure", "regional_highlight", "local_spot"]
+      style: ["learning_and_knowledge_priority", "action_and_thrill_priority", "relaxation_and_aesthetics_priority", "social_and_community_priority"]
+      feature_package: ["in_depth_expert_guidance", "live_performances", "hands_on_creation_experience", "immersive_themed_dining"]
+
+  dining:
+    dimensions:
+      category: ["coffee_shop", "restaurant", "street_food_vendor", "bakery"]
+      tier: ["world_renowned_award_winner", "nationally_acclaimed", "popular_local_mainstay", "simple_and_budget_eats"]
+      style: ["culinary_quality_priority", "ambiance_and_setting_priority", "speed_and_convenience_priority", "value_for_money_priority"]
+      feature_package: ["live_music_or_performance", "exceptional_view_or_setting", "chef_interaction_and_open_kitchen", "unique_themed_environment"]
+
+  shopping:
+    dimensions:
+      category: ["shopping_center_or_mall", "shopping_street", "local_market_or_bazaar", "boutiques_and_specialty_stores"]
+      tier: ["high_end_luxury", "mid_range_brand", "affordable_price", "bargain_deals"]
+      style: ["brand_and_quality_priority", "price_priority", "uniqueness_and_discovery_priority", "efficiency_and_needs_priority"]
+      feature_package: ["duty_free", "personal_shopping_or_styling_service", "local_artisan_and_handcraft_specialty", "vintage_and_second_hand_specialty"]
+
+# Additional configuration
+# refinement_steps_max: 5  # Moved to refinement_steps_catalog.py for dynamic management
+total_main_subtasks: 6

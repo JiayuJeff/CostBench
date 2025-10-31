@@ -1,0 +1,175 @@
+# CostBench Travel Runtime Defaults
+#
+# This file centrally maintains the default configuration for `env/run.py` and its call chain. CLI arguments always take precedence.
+# Values in YAML serve only as defaults/centralized documentation. When modifying, keep the comments updated and ensure the types and
+# value ranges match the expectations in the code.
+
+paths:
+  # Composite tool JSON output directory (file pattern)
+  tool_output_dir: "env/data/runtime/tools"
+  # Tool snapshot output directory after blocking
+  changed_tool_output_dir: "env/data/runtime/changed_tools"
+  # Default query file path
+  query_path: "env/data/queries/travel_queries.json"
+  # Root directory for runtime outputs
+  output_dir: "results"
+  # Search space definition (required by the Decide tool)
+  search_space_path: "env/data/static/search_spaces/test_search_space.json"
+
+random:
+  # Primary random seed (tool generation, blocking cost, simulation)
+  tool_creation_seed: 42
+  # Random interval [start, end) used by the blocker
+  seed_range_start: 1
+  seed_range_end: 10000
+  # Seed step size between different blockings
+  random_seed_interval: 100
+
+tool_defaults:
+  # Tool generation mode, memory (in-memory) or file (write to disk)
+  tool_mode: "memory"
+  # Atomic tool cost sampling range
+  min_atomic_cost: 15
+  max_atomic_cost: 25
+  # Composite tool noise standard deviation (scaled linearly with number of components)
+  noise_std: 0.1
+  # Whether to constrain the maximum length of composite tools
+  control_tool_length: false
+  # Maximum composite tool length (effective when control_tool_length=true)
+  max_tool_length: 8
+  # Whether to disable the longest-chain composite tool
+  ban_longest_tool: false
+  # Default refinement level (None means use maximum depth at runtime)
+  refinement_level: null
+  # Whether to provide examples (used in the system prompt)
+  use_example: false
+  # Whether to explain the composite tool concept in the prompt
+  provide_composite_concept: false
+  # Whether to include example atomic tool sequences in the prompt
+  provide_atomic_tool_sequence: false
+
+runtime:
+  # Maximum tool invocation steps per query
+  max_tool_steps: 20
+  # Whether to require reaching the goal state to terminate
+  require_goal_state: false
+  # Number of concurrent threads
+  num_threads: 4
+  # Whether to enable stochastic simulation
+  use_stimulation: false
+  # Simulation runs per query
+  stimulation_num: 1
+  # Whether to use a greedy strategy during simulation
+  greedy: false
+  # Whether to print tool interfaces (for debugging)
+  print_tool_interface: false
+  # Length of valid candidate IDs (for answer verification)
+  id_length: 5
+  # Whether to visualize simulation paths
+  vis_stimulation: false
+  vis_agent: false
+  vis_gt: false
+
+blocker:
+  # Whether to enable the blocker flow by default
+  use_blocker: false
+  # Blocking mode (ban_tool/preference_change/steplen_change/cost_change/mixed)
+  block_mode: "cost_change"
+  # Number of blocker invocations allowed per query
+  block_num: 1
+  # Order of supported blocker types (affects random selection)
+  block_types: ["ban_tool", "preference_change", "steplen_change", "cost_change"]
+  # Minimum composite tool length (used for blocker calculations)
+  min_tool_length: 3
+  # Maximum composite tool length (used for blocker calculations)
+  max_tools_length: 8
+
+model:
+  # Default model name
+  model_name: "Qwen/Qwen3-32B"
+  # Default sampling temperature
+  temperature: 0.0
+  # Default maximum output tokens
+  max_tokens: 16384
+  # AsyncOpenAI client timeout (seconds)
+  client_timeout: 1800
+  # Model endpoint configuration, base_url + api_key source
+  endpoints:
+    "Qwen/Qwen3-32B":
+      base_url: "http://0.0.0.0:40000/v1"
+      api_key: "EMPTY"
+    "Qwen/Qwen3-14B":
+      base_url: "http://0.0.0.0:40005/v1"
+      api_key: "EMPTY"
+    "Qwen/Qwen3-8B":
+      base_url: "http://0.0.0.0:40006/v1"
+      api_key: "EMPTY"
+    "meta-llama/Llama-3.1-8B-Instruct":
+      base_url: "http://0.0.0.0:40007/v1"
+      api_key: "EMPTY"
+    "deepseek/deepseek-chat-v3.1":
+      base_url: "https://openrouter.ai/api/v1"
+      api_key_env: "OPENROUTER_API_KEY"
+    "gpt-4o":
+      base_url: "https://api.nuwaapi.com/v1"
+      api_key_env: "NUWA_API_KEY"
+    "gpt-5":
+      base_url: "https://api.nuwaapi.com/v1"
+      api_key_env: "NUWA_API_KEY"
+    "gemini-2.5-pro":
+      base_url: "https://api.nuwaapi.com/v1"
+      api_key_env: "NUWA_API_KEY"
+    "claude-sonnet-4-20250514":
+      base_url: "https://api.nuwaapi.com/v1"
+      api_key_env: "NUWA_API_KEY"
+    "moonshotai/kimi-k2-0905":
+      base_url: "https://openrouter.ai/api/v1"
+      api_key_env: "OPENROUTER_API_KEY"
+    "z-ai/glm-4.5":
+      base_url: "https://openrouter.ai/api/v1"
+      api_key_env: "OPENROUTER_API_KEY"
+    "MiniMax-M2":
+      base_url: "https://api.minimaxi.com/v1"
+      api_key_env: "MINIMAX_API_KEY"
+
+metadata:
+  # Number of tool types (Decide/Search/Refine/Select)
+  num_tool_types: 4
+  # Tool type names
+  base_tool_types: ["Decide", "Search", "Refine", "Select"]
+
+messages:
+  # Standard error templates returned by ban_tool
+  ban_tool_return_sentences:
+    - "[ERROR] Apologies, this tool is temporarily unavailable due to a technical issue. Please try an alternative tool."
+    - "[ERROR] This tool is currently undergoing emergency maintenance. Please select another available tool for now."
+    - "[ERROR] The system has detected that this tool is temporarily offline. We recommend switching to another tool to proceed."
+    - "[ERROR] Due to a server error, the current tool cannot be loaded. Please use a backup tool."
+    - "[ERROR] We are working to resolve an issue with this tool. In the meantime, please try using other similar functions."
+    - "[ERROR] Unfortunately, this tool is currently malfunctioning. Please select a different one from the tool list."
+    - "[ERROR] For a better experience, this tool is currently being upgraded. Please proceed with another tool for now."
+    - "[ERROR] The selected tool is unavailable at this time. Please try another solution to complete your task."
+    - "[ERROR] This feature is currently inaccessible. Please explore and use other viable tools."
+    - "[ERROR] A service interruption has been detected. Please refrain from using this tool and try other options."
+  # User prompt templates for preference_change scenarios
+  preference_change_user_message_templates:
+    - "I just wanna change my requirements: {new_user_message}"
+    - "I think I’ll go with different requirements: {new_user_message}"
+    - "Let me switch up my requirements: {new_user_message}"
+    - "I feel like changing my requirements: {new_user_message}"
+    - "You know what, I’ll update my requirements: {new_user_message}"
+    - "I’m gonna change my requirements a bit: {new_user_message}"
+    - "Actually, I’d like different requirements: {new_user_message}"
+    - "Hold on, I wanna tweak my requirements: {new_user_message}"
+    - "Kinda wanna change my requirements to: {new_user_message}"
+    - "I’d rather go with these requirements instead: {new_user_message}"
+
+prompts:
+  # Prompt snippet that introduces the composite tool concept
+  composite_concept_content: "**Atomic vs Composite Tools**. The tools available could categorized into atomic tools and composite tools, which is specified in the tool description. An atomic tool performs a single and unseparable operation. A composite tool chains multiple atomic tools in sequence and lists its component atomic tools in its description. The cost of a composite tool is specified in its description. Inputs/outputs of a composite tool follow the component chain. Despite being multi-step internally, it still counts as ONE tool call and must obey the one-tool-per-step rule. The cost of a composite tool might be higher or lower than the sum of its component atomic tools."
+  # Template for atomic tool sequence examples
+  task_atomic_tool_sequence_template: "**Sample Atomic Tool Sequence**. For this task, the basic atomic tool calling sequence is: {atomic_tool_sequence}. You should replace some atomic tools with composite tools if that reduces cost. You must then compare all possible equivalent tool-calling paths and pick the one with the lowest total cost."
+  # Template for refinement stage instructions
+  refinement_content_template: "In the refinement stage, you should take charge of filtering the {task} candidates. You should refine the possible candidate set from these {num_dimensions} dimensions: {refinement_dimensions_str}. Note that the order of the refinement steps is fixed as specified above, and using other order will result in incorrect behavior."
+
+

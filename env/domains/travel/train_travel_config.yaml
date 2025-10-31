@@ -1,0 +1,42 @@
+main_subtasks:
+  location:
+    dimensions:
+      category: ["forest", "island", "desert", "countryside", "suburb", "historical_district"]
+      tier: ["regional_hub", "coastal_resort", "remote_outpost", "bustling_capital", "suburban_sprawl", "quaint_village"]
+      style: ["bohemian_and_artsy", "academic_and_scholarly", "industrial_and_edgy", "family_friendly", "adventurous_and_wild", "luxurious_and_exclusive"]
+      feature_package: ["unesco_world_heritage", "major_tech_hub", "renowned_nightlife", "fashion_and_design_hotspot", "center_for_performing_arts", "gateway_to_nature_reserves"]
+
+  transportation:
+    dimensions:
+      category: ["ferry", "subway_or_metro", "ride_sharing", "tram", "bicycle_rental", "private_charter"]
+      tier: ["first_class", "premium_economy", "economy_plus", "sleeper_cabin", "shared_ride", "private_vehicle"]
+      style: ["cost_effective_priority", "eco_friendly_travel", "direct_route_only", "multi_stop_journey", "off_peak_travel", "last_minute_booking"]
+      feature_package: ["priority_boarding", "lounge_access", "extra_legroom_seating", "pet_travel_option", "onboard_entertainment_system", "dedicated_family_section"]
+
+  accommodation:
+    dimensions:
+      category: ["resort", "motel", "vacation_rental", "bed_and_breakfast", "guesthouse", "apartment_hotel"]
+      tier: ["ultra_luxury_suite", "boutique_charming", "economy_reliable", "backpacker_dormitory", "family_suite", "extended_stay"]
+      style: ["beachfront_access", "ski_in_ski_out", "nightlife_access_priority", "historic_building_stay", "eco_lodge_experience", "business_district_proximity"]
+      feature_package: ["all_inclusive_packages", "spa_and_wellness_center", "rooftop_bar_or_pool", "free_airport_shuttle", "24_hour_room_service", "on_site_parking"]
+
+  attraction:
+    dimensions:
+      category: ["zoo_or_aquarium", "botanical_garden", "sports_stadium", "theater_or_concert_hall", "public_park", "famous_bridge"]
+      tier: ["iconic_must_see", "hidden_gem", "community_favorite", "award_winning_venue", "culturally_significant", "instagrammable_spot"]
+      style: ["family_and_kids_priority", "romantic_and_scenic_priority", "adventure_and_sports_priority", "culinary_and_taste_priority", "artistic_and_creative_priority", "historical_and_cultural_priority"]
+      feature_package: ["behind_the_scenes_tour", "virtual_reality_experience", "seasonal_special_events", "skip_the_line_access", "photography_workshop", "meet_the_artist_or_curator"]
+
+  dining:
+    dimensions:
+      category: ["food_truck", "bistro", "fine_dining", "pub_or_bar", "diner", "food_court"]
+      tier: ["michelin_starred", "celebrity_chef_owned", "critically_acclaimed", "underground_favorite", "family_run_eatery", "quick_service_chain"]
+      style: ["authenticity_and_tradition_priority", "innovation_and_fusion_priority", "local_and_seasonal_ingredients", "healthy_and_organic_options", "family_friendly_atmosphere", "late_night_dining"]
+      feature_package: ["outdoor_seating_or_patio", "private_dining_rooms", "tasting_menu_experience", "extensive_wine_list", "farm_to_table_concept", "cooking_class_offering"]
+
+  shopping:
+    dimensions:
+      category: ["department_store", "outlet_mall", "flea_market", "antique_shop", "concept_store", "pop_up_shop"]
+      tier: ["designer_couture", "premium_mainstream", "fast_fashion", "secondhand_and_thrift", "artisan_and_craft", "discount_and_clearance"]
+      style: ["experience_and_entertainment_priority", "local_products_priority", "ethical_and_sustainable_priority", "gift_and_souvenir_hunting", "window_shopping_and_browsing", "specific_item_search"]
+      feature_package: ["tax_refund_service", "in_store_cafe_or_restaurant", "product_customization", "exclusive_collections", "gift_wrapping_service", "loyalty_program_benefits"]
