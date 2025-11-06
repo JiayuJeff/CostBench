@@ -24,18 +24,20 @@ CostBench evaluates how models perform in a task environment containing multiple
 - **Concurrent Execution**: Supports multi-threaded concurrent query processing to improve evaluation efficiency
 - **Visualization**: Provides visualization capabilities for tool-calling paths
 
-## 📋 Prerequisites
-
-- Python 3.8+
-- Required packages (see Installation section)
-- Access to model services supporting OpenAI-compatible APIs
-
 ## 🚀 Quick Start
 
 ### Installation
 
 ```bash
-pip install openai httpx pyyaml python-dotenv tqdm
+# Clone the repository
+git clone https://github.com/JiayuJeff/CostBench.git
+cd CostBench
+
+# Install the package in editable mode
+pip install -e .
+
+# Or install dependencies only
+pip install -r requirements.txt
 ```
 
 ### Environment Configuration
