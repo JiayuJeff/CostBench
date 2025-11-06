@@ -9,6 +9,7 @@
 
 This is the official repository for paper "UserBench: An Interactive Gym Environment for User-Centric Agents".
 
+
 ## 🎯 Project Overview
 
 **CostBench** is a comprehensive benchmark for evaluating **multi-turn cost-optimal planning and adaptation** capabilities of large language models (LLMs) in tool-using scenarios. 
@@ -18,6 +19,7 @@ The benchmark systematically assesses how LLM agents navigate complex tool-calli
 - **📋 Cost-Optimal Planning**: Plan cost-optimal multi-step tool invocation sequences in static environments
 - **🔄 Dynamic Adaptation**: Dynamically adapt their strategies when tool costs, availability, or preferences change during execution in dynamic environments
 
+
 ## ✨ Core Features
 
 - **Hierarchical Tool System**: Supports atomic and composite tools, each with clear input/output types and costs
@@ -25,6 +27,7 @@ The benchmark systematically assesses how LLM agents navigate complex tool-calli
 - **Dynamic Blocking**: Supports multiple blocking modes (cost changes, preference changes, tool disabling, etc.) to test model adaptation capabilities
 - **Adjustable Difficulties**: Supports different levels of task sequence to control task complexity
 - **Reproducible Random System**: Features a seed-controlled pseudo-random system that ensures reproducibility across runs while preventing data leakage through deterministic randomization
+
 
 ## 🚀 Quick Start
 
@@ -61,6 +64,7 @@ OPENAI_BASE_URL=https://api.openai.com/v1
 
 3. Check and modify the configuration in `env/config/travel_config.yaml` (if needed).
 
+
 ### Running Examples
 
 #### Main Results
@@ -92,9 +96,11 @@ python env/run.py \
     --output_dir outputs/
 ```
 
+
 ## 📖 Advanced Usage
 
 For advanced configuration, please modify the [configuration file](env/config/travel_config.yaml) to customize tool parameters, blocking behavior, model endpoints, and other settings.
+
 
 ### Tool-Related Parameters
 
@@ -105,16 +111,19 @@ For advanced configuration, please modify the [configuration file](env/config/tr
 - `--noise_std`: Noise scaling factor for composite tools
 - `--ban_longest_tool`: Whether to disable tools that complete the task in one step
 
+
 ### Blocking-Related Parameters
 
 - `--use_blocker`: Enable dynamic blocking functionality
 - `--block_mode`: Blocking mode (`preference_change`, `cost_change`, `steplen_change`, `ban_tool`)
 - `--block_num`: Number of dynamic blocking events per query
 
+
 ### Query-Related Parameters
 
 - `--query_path`: Path to query file (JSON format)
 - `--start_index` / `--end_index`: Index range of queries to process (-1 means process all remaining queries)
+
 
 ### Model-Related Parameters
 
@@ -122,11 +131,13 @@ For advanced configuration, please modify the [configuration file](env/config/tr
 - `--temperature`: Sampling temperature
 - `--max_tokens`: Maximum number of generated tokens
 
+
 ### Runtime Parameters
 
 - `--num_threads`: Number of concurrent threads
 - `--output_dir`: Output directory for results
 - `--require_goal_state`: Still in construction. Unexpected behavior may happen if set to true.
+
 
 ### Simulation-Related Parameters
 
@@ -141,9 +152,11 @@ You can specify a custom configuration file path through the `COSTBENCH_TRAVEL_C
 
 Still in construction.
 
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit Issues and Pull Requests.
+
 
 ## 📚 Citing this work
 
@@ -157,4 +170,4 @@ Contributions are welcome! Please feel free to submit Issues and Pull Requests.
       primaryClass={cs.AI},
       url={https://arxiv.org/abs/2511.02734}, 
 }
-'''
+```
