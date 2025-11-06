@@ -61,7 +61,11 @@ OPENAI_BASE_URL=https://api.openai.com/v1
 
 ### Running Examples
 
-Basic run command:
+#### Table 4 Results
+
+![Table 4 Results](figures/Table_4.png)
+
+Basic run command (Table 4 results):
 
 ```bash
 python env/run.py \
@@ -72,7 +76,9 @@ python env/run.py \
     --output_dir <output_directory>
 ```
 
-## 📖 Key Parameters
+## 📖 Advanced Usage
+
+For advanced configuration, please modify the [configuration file](env/config/travel_config.yaml) to customize tool parameters, blocking behavior, model endpoints, and other settings.
 
 ### Tool-Related Parameters
 
