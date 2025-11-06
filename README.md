@@ -1,6 +1,65 @@
 # CostBench
 
-<!-- python env/run.py \
+<span style="border-left: 2px solid #555; padding-left: 8px; margin-right: 16px;">📄 <u>Paper</u></span>
+<span style="border-left: 2px solid #555; padding-left: 8px;">📊 <u>Dataset</u></span>
+
+This is the official repository for paper "UserBench: An Interactive Gym Environment for User-Centric Agents".
+
+
+CostBench is a benchmarking system for evaluating the cost optimization capabilities of large language models in tool-using scenarios. The system focuses on testing models' ability to select the lowest-cost path in complex tool-calling tasks, particularly suitable for scenarios requiring multi-step tool calls such as travel planning.
+
+## 🎯 Project Overview
+
+CostBench evaluates how models perform in a task environment containing multiple tools by assessing:
+- **Cost Awareness**: Understanding the cost of each tool call
+- **Path Planning**: Selecting the tool-calling sequence with the lowest total cost
+- **Dynamic Adaptation**: Adjusting strategies when tool costs or availability change
+
+## ✨ Core Features
+
+- **Tool System**: Supports atomic and composite tools, each with clear input/output types and costs
+- **Dynamic Blocking**: Supports multiple blocking modes (cost changes, preference changes, tool disabling, etc.) to test model adaptation capabilities
+- **Refinement Levels**: Supports different levels of tool refinement (refinement_level) to control task complexity
+- **Multi-Model Support**: Supports multiple large language models through OpenAI-compatible APIs
+- **Concurrent Execution**: Supports multi-threaded concurrent query processing to improve evaluation efficiency
+- **Visualization**: Provides visualization capabilities for tool-calling paths
+
+## 📋 Prerequisites
+
+- Python 3.8+
+- Required packages (see Installation section)
+- Access to model services supporting OpenAI-compatible APIs
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+pip install openai httpx pyyaml python-dotenv tqdm
+```
+
+### Environment Configuration
+
+1. Copy the environment variable configuration file:
+```bash
+cp env/.env.example env/.env
+```
+
+2. Edit the `env/.env` file to configure model API keys and endpoints:
+```bash
+# Example configuration
+OPENAI_API_KEY=your_api_key_here
+OPENAI_BASE_URL=https://api.openai.com/v1
+```
+
+3. Check and modify the configuration in `env/config/travel_config.yaml` (if needed)
+
+### Running Examples
+
+Basic run command:
+
+```bash
+python env/run.py \
     --tool_creation_seed 42 \
     --refinement_level 2 \
     --max_tool_steps 20 \
@@ -20,4 +79,140 @@
     --stimulation_num 1 \
     --greedy \
     --provide_atomic_tool_sequence \
-    --use_example -->
+    --use_example
+```
+
+## 📖 Key Parameters
+
+### Tool-Related Parameters
+
+- `--tool_creation_seed`: Random seed for tool generation, controlling the tool creation seed and cost change batches for each query
+- `--refinement_level`: Tool refinement level, controlling task complexity (defaults to maximum depth)
+- `--max_tool_steps`: Maximum number of tool-calling steps
+- `--min_atomic_cost` / `--max_atomic_cost`: Cost range for atomic tools
+- `--noise_std`: Noise scaling factor for composite tools
+- `--ban_longest_tool`: Whether to disable tools that complete the task in one step
+
+### Blocking-Related Parameters
+
+- `--use_blocker`: Enable dynamic blocking functionality
+- `--block_mode`: Blocking mode (`preference_change`, `cost_change`, `steplen_change`, `ban_tool`)
+- `--block_num`: Number of dynamic blocking events per query
+
+### Query-Related Parameters
+
+- `--query_path`: Path to query file (JSON format)
+- `--start_index` / `--end_index`: Index range of queries to process (-1 means process all remaining queries)
+
+### Model-Related Parameters
+
+- `--model_name`: Model name (must be defined in configuration file)
+- `--temperature`: Sampling temperature
+- `--max_tokens`: Maximum number of generated tokens
+
+### Runtime Parameters
+
+- `--num_threads`: Number of concurrent threads
+- `--output_dir`: Output directory for results
+- `--require_goal_state`: Force tool calls until goal state is reached
+- `--print_tool_interface`: Print tool interface before each call
+
+### Prompt-Related Parameters
+
+- `--use_example`: Include example instructions
+- `--provide_composite_concept`: Provide composite tool concept guidance
+- `--provide_atomic_tool_sequence`: Provide canonical atomic tool sequence for the task
+
+### Simulation-Related Parameters
+
+- `--use_stimulation`: Enable random strategy simulation
+- `--stimulation_num`: Number of simulation runs per query
+- `--greedy`: Use greedy selection strategy in simulation
+
+### Visualization Parameters
+
+- `--vis_agent`: Print agent path
+- `--vis_gt`: Print ground-truth path
+- `--vis_stimulation`: Print simulation path
+
+## 📁 Project Structure
+
+```
+CostBench_github/
+├── env/
+│   ├── __init__.py
+│   ├── run.py                 # Main execution script
+│   ├── settings.py            # Configuration loading module
+│   ├── config/
+│   │   └── travel_config.yaml # Configuration file
+│   ├── core/                  # Core type definitions
+│   │   ├── base_types.py      # Tool and data type base classes
+│   │   └── data_types.py      # Data type definitions
+│   ├── domains/               # Domain-specific implementations
+│   │   └── travel/            # Travel planning domain
+│   ├── utils/                 # Utility functions
+│   │   ├── solver.py          # Path solver
+│   │   ├── llm_client.py      # LLM client
+│   │   ├── eval.py            # Evaluation functions
+│   │   └── ...
+│   ├── vis/                   # Visualization module
+│   └── data/                  # Data files
+│       └── runtime/
+│           └── queries/       # Query data
+├── README.md
+└── .gitignore
+```
+
+## 🔧 Configuration
+
+The main configuration file is located at `env/config/travel_config.yaml` and contains the following configuration sections:
+
+- **paths**: Path configuration (tool output directories, query paths, etc.)
+- **random**: Random seed configuration
+- **tool_defaults**: Tool default parameters
+- **runtime**: Runtime configuration
+- **blocker**: Blocker configuration
+- **model**: Model endpoint configuration
+- **metadata**: Metadata configuration
+- **messages**: Message template configuration
+- **prompts**: Prompt template configuration
+
+You can specify a custom configuration file path through the `COSTBENCH_TRAVEL_CONFIG` environment variable.
+
+## 📊 Output Results
+
+After execution completes, results are saved to the specified output directory with the filename format:
+```
+results_{model_name}_{block_info}_{refinement_info}.json
+```
+
+Result files contain:
+- Detailed execution information for each query
+- Tool-calling paths
+- Total cost
+- Whether the goal state was successfully reached
+- Evaluation metrics
+
+## 🧪 Evaluation Metrics
+
+CostBench provides multiple evaluation metrics:
+- **Path Correctness**: Whether the model-selected path matches the optimal path
+- **Cost Efficiency**: Total cost of the model-selected path
+- **Success Rate**: Proportion of queries that successfully complete the task
+- **Edit Distance**: Difference between the model path and the optimal path
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit Issues and Pull Requests.
+
+## Citing this work
+
+@misc{liu2025costbenchevaluatingmultiturncostoptimal,
+      title={CostBench: Evaluating Multi-Turn Cost-Optimal Planning and Adaptation in Dynamic Environments for LLM Tool-Use Agents}, 
+      author={Jiayu Liu and Cheng Qian and Zhaochen Su and Qing Zong and Shijue Huang and Bingxiang He and Yi R. Fung},
+      year={2025},
+      eprint={2511.02734},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2511.02734}, 
+}
