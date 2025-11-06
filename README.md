@@ -112,14 +112,13 @@ For advanced configuration, please modify the [configuration file](env/config/tr
 
 - `--num_threads`: Number of concurrent threads
 - `--output_dir`: Output directory for results
-- `--require_goal_state`: Force tool calls until goal state is reached
-- `--print_tool_interface`: Print tool interface before each call
+- `--require_goal_state`: Still in construction. Unexpected behavior may happen if set to true.
 
 ### Simulation-Related Parameters
 
 - `--use_stimulation`: Enable random strategy simulation
 - `--stimulation_num`: Number of simulation runs per query
-- `--greedy`: Use greedy selection strategy in simulation
+- `--greedy`: Use greedy selection strategy in simulation. Would use random policy if set to False.
 
 ## 📁 Project Structure
 
