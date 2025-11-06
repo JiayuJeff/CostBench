@@ -507,8 +507,9 @@ class CompositeTool(Tool):
         
         # Add Gaussian noise
         from env.settings import load_config
+        import math
 
-        noise_std = load_config().tool_defaults.noise_std * k
+        noise_std = load_config().tool_defaults.noise_std * math.sqrt(k)
         import hashlib
         import numpy as np
         seed_val = int(hashlib.sha256(f"composite_runtime_noise:{self.name}:{self.refinement_level}".encode("utf-8")).hexdigest(), 16) % (2**31 - 1)
