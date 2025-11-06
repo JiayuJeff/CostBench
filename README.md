@@ -1,5 +1,7 @@
 # CostBench
 
+![](figures/Figure_1.png)
+
 <p align="center">
   <a href="https://arxiv.org/pdf/2511.02734v1">📄 Paper</a> •
   <a href="https://github.com/JiayuJeff/CostBench/blob/main/env/data/runtime/queries/queries.json">📊 Dataset</a>
