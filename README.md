@@ -107,23 +107,11 @@ python env/run.py \
 - `--require_goal_state`: Force tool calls until goal state is reached
 - `--print_tool_interface`: Print tool interface before each call
 
-### Prompt-Related Parameters
-
-- `--use_example`: Include example instructions
-- `--provide_composite_concept`: Provide composite tool concept guidance
-- `--provide_atomic_tool_sequence`: Provide canonical atomic tool sequence for the task
-
 ### Simulation-Related Parameters
 
 - `--use_stimulation`: Enable random strategy simulation
 - `--stimulation_num`: Number of simulation runs per query
 - `--greedy`: Use greedy selection strategy in simulation
-
-### Visualization Parameters
-
-- `--vis_agent`: Print agent path
-- `--vis_gt`: Print ground-truth path
-- `--vis_stimulation`: Print simulation path
 
 ## 📁 Project Structure
 
