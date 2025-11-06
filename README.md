@@ -6,13 +6,12 @@
 This is the official repository for paper "UserBench: An Interactive Gym Environment for User-Centric Agents".
 
 
-CostBench is a benchmarking system for evaluating the cost optimization capabilities of large language models in tool-using scenarios. The system focuses on testing models' ability to select the lowest-cost path in complex tool-calling tasks, particularly suitable for scenarios requiring multi-step tool calls such as travel planning.
+CostBench is a benchmark for evaluating the cost optimization capabilities of large language models in tool-using scenarios. The system focuses on testing models' ability to select the lowest-cost path in static/dynamic environments.
 
 ## 🎯 Project Overview
 
 CostBench evaluates how models perform in a task environment containing multiple tools by assessing:
-- **Cost Awareness**: Understanding the cost of each tool call
-- **Path Planning**: Selecting the tool-calling sequence with the lowest total cost
+- **Cost-Aware Planning**: Selecting the tool-calling sequence with the lowest total cost to finish the task
 - **Dynamic Adaptation**: Adjusting strategies when tool costs or availability change
 
 ## ✨ Core Features
