@@ -22,6 +22,7 @@ The benchmark systematically assesses how LLM agents navigate complex tool-calli
 - **Flexible Cost Assignment**: Supports configurable cost ranges for atomic tools and composite tools with component-based cost calculation plus Gaussian noise, enabling customizable cost distributions for evaluation scenarios
 - **Dynamic Blocking**: Supports multiple blocking modes (cost changes, preference changes, tool disabling, etc.) to test model adaptation capabilities
 - **Adjustable Difficulties**: Supports different levels of task sequence to control task complexity
+- **Reproducible Random System**: Features a seed-controlled pseudo-random system that ensures reproducibility across runs while preventing data leakage through deterministic randomization
 
 ## 🚀 Quick Start
 
