@@ -116,7 +116,7 @@ python env/run.py \
 ## 📁 Project Structure
 
 ```
-CostBench_github/
+CostBench/
 ├── env/
 │   ├── __init__.py
 │   ├── run.py                 # Main execution script
