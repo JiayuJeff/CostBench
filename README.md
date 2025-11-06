@@ -7,6 +7,7 @@
 
 This is the official repository for paper "UserBench: An Interactive Gym Environment for User-Centric Agents".
 
+## 🎯 Project Overview
 
 **CostBench** is a comprehensive benchmark for evaluating **multi-turn cost-optimal planning and adaptation** capabilities of large language models (LLMs) in tool-using scenarios. 
 
@@ -14,12 +15,6 @@ The benchmark systematically assesses how LLM agents navigate complex tool-calli
 
 - **📋 Cost-Optimal Planning**: Plan cost-optimal multi-step tool invocation sequences in static environments
 - **🔄 Dynamic Adaptation**: Dynamically adapt their strategies when tool costs, availability, or preferences change during execution in dynamic environments
-
-## 🎯 Project Overview
-
-CostBench evaluates how models perform in a task environment containing multiple tools by assessing:
-- **Cost-Aware Planning**: Selecting the tool-calling sequence with the lowest total cost to finish the task
-- **Dynamic Adaptation**: Adjusting strategies when tool costs or availability change
 
 ## ✨ Core Features
 
