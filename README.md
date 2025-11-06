@@ -75,8 +75,22 @@ python env/run.py \
     --ban_longest_tool \
     --model_name gpt-5 \
     --num_threads 10 \
-    --output_dir <output_directory>
+    --output_dir outputs/
 ```
+
+Run with dynamic blockings (could change `cost_change' to other types):
+
+```bash
+python env/run.py \
+    --refinement_level 2 \
+    --ban_longest_tool \
+    --model_name gpt-5 \
+    --num_threads 10 \
+    --use_blocker \
+    --block_num 1 \
+    --block_type cost_change \
+    --output_dir outputs/
+'''
 
 ## 📖 Advanced Usage
 
@@ -121,9 +135,6 @@ For advanced configuration, please modify the [configuration file](env/config/tr
 - `--greedy`: Use greedy selection strategy in simulation. Would use random policy if set to False.
 
 You can specify a custom configuration file path through the `COSTBENCH_TRAVEL_CONFIG` environment variable.
-
-<!-- ## 🧪 Evaluation Metrics -->
-
 
 
 ## 🔧 Extending to New Domains or Larger Task Sequences
