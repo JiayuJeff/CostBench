@@ -90,7 +90,7 @@ python env/run.py \
     --block_num 1 \
     --block_type cost_change \
     --output_dir outputs/
-'''
+```
 
 ## 📖 Advanced Usage
 
