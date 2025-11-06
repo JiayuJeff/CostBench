@@ -18,12 +18,10 @@ The benchmark systematically assesses how LLM agents navigate complex tool-calli
 
 ## ✨ Core Features
 
-- **Tool System**: Supports atomic and composite tools, each with clear input/output types and costs
+- **Hierarchical Tool System**: Supports atomic and composite tools, each with clear input/output types and costs
+- **Flexible Cost Assignment**: Supports configurable cost ranges for atomic tools and composite tools with component-based cost calculation plus Gaussian noise, enabling customizable cost distributions for evaluation scenarios
 - **Dynamic Blocking**: Supports multiple blocking modes (cost changes, preference changes, tool disabling, etc.) to test model adaptation capabilities
-- **Refinement Levels**: Supports different levels of tool refinement (refinement_level) to control task complexity
-- **Multi-Model Support**: Supports multiple large language models through OpenAI-compatible APIs
-- **Concurrent Execution**: Supports multi-threaded concurrent query processing to improve evaluation efficiency
-- **Visualization**: Provides visualization capabilities for tool-calling paths
+- **Adjustable Difficulties**: Supports different levels of task sequence to control task complexity
 
 ## 🚀 Quick Start
 
