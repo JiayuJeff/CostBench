@@ -63,7 +63,7 @@ OPENAI_BASE_URL=https://api.openai.com/v1
 
 ### Running Examples
 
-#### Table 4 Results
+#### Main Results
 
 ![](figures/Table_4.png)
 
@@ -120,51 +120,9 @@ For advanced configuration, please modify the [configuration file](env/config/tr
 - `--stimulation_num`: Number of simulation runs per query
 - `--greedy`: Use greedy selection strategy in simulation. Would use random policy if set to False.
 
-<!-- ## 📁 Project Structure
-
-```
-CostBench/
-├── env/
-│   ├── __init__.py
-│   ├── run.py                 # Main execution script
-│   ├── settings.py            # Configuration loading module
-│   ├── config/
-│   │   └── travel_config.yaml # Configuration file
-│   ├── core/                  # Core type definitions
-│   │   ├── base_types.py      # Tool and data type base classes
-│   │   └── data_types.py      # Data type definitions
-│   ├── domains/               # Domain-specific implementations
-│   │   └── travel/            # Travel planning domain
-│   ├── utils/                 # Utility functions
-│   │   ├── solver.py          # Path solver
-│   │   ├── llm_client.py      # LLM client
-│   │   ├── eval.py            # Evaluation functions
-│   │   └── ...
-│   ├── vis/                   # Visualization module
-│   └── data/                  # Data files
-│       └── runtime/
-│           └── queries/       # Query data
-├── README.md
-└── .gitignore
-``` -->
-
-<!-- ## 🔧 Configuration
-
-The main configuration file is located at `env/config/travel_config.yaml` and contains the following configuration sections:
-
-- **paths**: Path configuration (tool output directories, query paths, etc.)
-- **random**: Random seed configuration
-- **tool_defaults**: Tool default parameters
-- **runtime**: Runtime configuration
-- **blocker**: Blocker configuration
-- **model**: Model endpoint configuration
-- **metadata**: Metadata configuration
-- **messages**: Message template configuration
-- **prompts**: Prompt template configuration -->
-
 You can specify a custom configuration file path through the `COSTBENCH_TRAVEL_CONFIG` environment variable.
 
-## 🧪 Evaluation Metrics
+<!-- ## 🧪 Evaluation Metrics -->
 
 
 
