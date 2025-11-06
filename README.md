@@ -78,7 +78,7 @@ python env/run.py \
     --output_dir outputs/
 ```
 
-Run with dynamic blockings (could change `cost_change' to other types):
+Run with dynamic blockings (could change `cost_change` to other types):
 
 ```bash
 python env/run.py \
