@@ -44,7 +44,7 @@ pip install -r requirements.txt
 
 1. **Local Model Deployment**
 
-   Replace `<your_base_url>` in the `endpoints.base_url` field of `env/config/travel_config.yaml` with your own port.
+   Replace `<your_base_url>` in the `model.endpoints` field of `env/config/travel_config.yaml` with your own port.
 
 2. **API Calls**
 
@@ -57,7 +57,7 @@ OPENAI_API_KEY=your_api_key_here
 OPENAI_BASE_URL=https://api.openai.com/v1
 ```
 
-3. Check and modify the configuration in `env/config/travel_config.yaml` (if needed)
+3. Check and modify the configuration in `env/config/travel_config.yaml` (if needed).
 
 ### Running Examples
 
@@ -65,26 +65,11 @@ Basic run command:
 
 ```bash
 python env/run.py \
-    --tool_creation_seed 42 \
     --refinement_level 2 \
-    --max_tool_steps 20 \
-    --min_atomic_cost 15 \
-    --max_atomic_cost 25 \
-    --noise_std 0.1 \
     --ban_longest_tool \
-    --query_path env/data/runtime/queries/queries.json \
-    --model_name gemini-2.5-pro \
-    --temperature 0.0 \
-    --max_tokens 16384 \
-    --start_index 0 \
-    --end_index 1 \
-    --num_threads 1 \
-    --output_dir github_test/ \
-    --use_stimulation \
-    --stimulation_num 1 \
-    --greedy \
-    --provide_atomic_tool_sequence \
-    --use_example
+    --model_name gpt-5 \
+    --num_threads 10 \
+    --output_dir <output_directory>
 ```
 
 ## 📖 Key Parameters

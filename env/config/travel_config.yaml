@@ -10,7 +10,7 @@ paths:
   # Tool snapshot output directory after blocking
   changed_tool_output_dir: "env/data/runtime/changed_tools"
   # Default query file path
-  query_path: "env/data/queries/travel_queries.json"
+  query_path: "env/data/runtime/queries/queries.json"
   # Root directory for runtime outputs
   output_dir: "results"
   # Search space definition (required by the Decide tool)
@@ -38,15 +38,15 @@ tool_defaults:
   # Maximum composite tool length (effective when control_tool_length=true)
   max_tool_length: 8
   # Whether to disable the longest-chain composite tool
-  ban_longest_tool: false
+  ban_longest_tool: true
   # Default refinement level (None means use maximum depth at runtime)
   refinement_level: null
   # Whether to provide examples (used in the system prompt)
-  use_example: false
+  use_example: true
   # Whether to explain the composite tool concept in the prompt
-  provide_composite_concept: false
+  provide_composite_concept: true
   # Whether to include example atomic tool sequences in the prompt
-  provide_atomic_tool_sequence: false
+  provide_atomic_tool_sequence: true
 
 runtime:
   # Maximum tool invocation steps per query
@@ -56,11 +56,11 @@ runtime:
   # Number of concurrent threads
   num_threads: 4
   # Whether to enable stochastic simulation
-  use_stimulation: false
+  use_stimulation: true
   # Simulation runs per query
   stimulation_num: 1
   # Whether to use a greedy strategy during simulation
-  greedy: false
+  greedy: true
   # Whether to print tool interfaces (for debugging)
   print_tool_interface: false
   # Length of valid candidate IDs (for answer verification)
