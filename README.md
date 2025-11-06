@@ -41,12 +41,13 @@ pip install -r requirements.txt
 
 ### Environment Configuration
 
-1. Copy the environment variable configuration file:
-```bash
-cp env/.env.example env/.env
-```
+1. **Local Model Deployment**
+   Replace `<your_base_url>` in the `endpoints.base_url` field of `env/config/travel_config.yaml` with your own port.
 
-2. Edit the `env/.env` file to configure model API keys and endpoints:
+2. **API Calls**
+   Replace `<your_api_key_env>` and `<your_base_url>` in the `endpoints.base_url` field of `env/config/travel_config.yaml` with your own API key environment variable name and port.
+   
+   Then, configure your API key in `env/.env`:
 ```bash
 # Example configuration
 OPENAI_API_KEY=your_api_key_here

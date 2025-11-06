@@ -96,41 +96,32 @@ model:
   # Model endpoint configuration, base_url + api_key source
   endpoints:
     "Qwen/Qwen3-32B":
-      base_url: "http://0.0.0.0:40000/v1"
+      base_url: <your_base_url>
       api_key: "EMPTY"
     "Qwen/Qwen3-14B":
-      base_url: "http://0.0.0.0:40005/v1"
+      base_url: <your_base_url>
       api_key: "EMPTY"
     "Qwen/Qwen3-8B":
-      base_url: "http://0.0.0.0:40006/v1"
+      base_url: <your_base_url>
       api_key: "EMPTY"
     "meta-llama/Llama-3.1-8B-Instruct":
-      base_url: "http://0.0.0.0:40007/v1"
+      base_url: <your_base_url>
       api_key: "EMPTY"
-    "deepseek/deepseek-chat-v3.1":
-      base_url: "https://openrouter.ai/api/v1"
-      api_key_env: "OPENROUTER_API_KEY"
     "gpt-4o":
-      base_url: "https://api.nuwaapi.com/v1"
-      api_key_env: "NUWA_API_KEY"
+      base_url: <your_base_url>
+      api_key_env: <your_api_key_env>
     "gpt-5":
-      base_url: "https://api.nuwaapi.com/v1"
-      api_key_env: "NUWA_API_KEY"
+      base_url: <your_base_url>
+      api_key_env: <your_api_key_env>
     "gemini-2.5-pro":
-      base_url: "https://api.nuwaapi.com/v1"
-      api_key_env: "NUWA_API_KEY"
+      base_url: <your_base_url>
+      api_key_env: <your_api_key_env>
     "claude-sonnet-4-20250514":
-      base_url: "https://api.nuwaapi.com/v1"
-      api_key_env: "NUWA_API_KEY"
-    "moonshotai/kimi-k2-0905":
-      base_url: "https://openrouter.ai/api/v1"
-      api_key_env: "OPENROUTER_API_KEY"
+      base_url: <your_base_url>
+      api_key_env: <your_api_key_env>
     "z-ai/glm-4.5":
-      base_url: "https://openrouter.ai/api/v1"
-      api_key_env: "OPENROUTER_API_KEY"
-    "MiniMax-M2":
-      base_url: "https://api.minimaxi.com/v1"
-      api_key_env: "MINIMAX_API_KEY"
+      base_url: <your_base_url>
+      api_key_env: <your_api_key_env>
 
 metadata:
   # Number of tool types (Decide/Search/Refine/Select)
