@@ -85,7 +85,7 @@ For advanced configuration, please modify the [configuration file](env/config/tr
 ### Tool-Related Parameters
 
 - `--tool_creation_seed`: Random seed for tool generation, controlling the tool creation seed and cost change batches for each query
-- `--refinement_level`: Tool refinement level, controlling task complexity (defaults to maximum depth). For advanced usage, ```task_sequence equals = refinement_level + 3'''.
+- `--refinement_level`: Tool refinement level, controlling task complexity (defaults to maximum depth). For advanced usage, `task_sequence equals = refinement_level + 3'.
 - `--max_tool_steps`: Maximum number of tool-calling steps
 - `--min_atomic_cost` / `--max_atomic_cost`: Cost range for atomic tools
 - `--noise_std`: Noise scaling factor for composite tools
