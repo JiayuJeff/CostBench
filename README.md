@@ -120,7 +120,7 @@ For advanced configuration, please modify the [configuration file](env/config/tr
 - `--stimulation_num`: Number of simulation runs per query
 - `--greedy`: Use greedy selection strategy in simulation. Would use random policy if set to False.
 
-## 📁 Project Structure
+<!-- ## 📁 Project Structure
 
 ```
 CostBench/
@@ -146,9 +146,9 @@ CostBench/
 │           └── queries/       # Query data
 ├── README.md
 └── .gitignore
-```
+``` -->
 
-## 🔧 Configuration
+<!-- ## 🔧 Configuration
 
 The main configuration file is located at `env/config/travel_config.yaml` and contains the following configuration sections:
 
@@ -160,31 +160,17 @@ The main configuration file is located at `env/config/travel_config.yaml` and co
 - **model**: Model endpoint configuration
 - **metadata**: Metadata configuration
 - **messages**: Message template configuration
-- **prompts**: Prompt template configuration
+- **prompts**: Prompt template configuration -->
 
 You can specify a custom configuration file path through the `COSTBENCH_TRAVEL_CONFIG` environment variable.
 
-## 📊 Output Results
-
-After execution completes, results are saved to the specified output directory with the filename format:
-```
-results_{model_name}_{block_info}_{refinement_info}.json
-```
-
-Result files contain:
-- Detailed execution information for each query
-- Tool-calling paths
-- Total cost
-- Whether the goal state was successfully reached
-- Evaluation metrics
-
 ## 🧪 Evaluation Metrics
 
-CostBench provides multiple evaluation metrics:
-- **Path Correctness**: Whether the model-selected path matches the optimal path
-- **Cost Efficiency**: Total cost of the model-selected path
-- **Success Rate**: Proportion of queries that successfully complete the task
-- **Edit Distance**: Difference between the model path and the optimal path
+
+
+## 🔧 Extending to New Domains or Larger Task Sequences
+
+Still in construction.
 
 ## 🤝 Contributing
 
