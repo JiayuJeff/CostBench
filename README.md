@@ -145,7 +145,7 @@ Still in construction.
 
 Contributions are welcome! Please feel free to submit Issues and Pull Requests.
 
-## Citing this work
+## 📚 Citing this work
 
 ```
 @misc{liu2025costbenchevaluatingmultiturncostoptimal,
