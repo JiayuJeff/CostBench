@@ -1,12 +1,14 @@
 # CostBench
 
-<span style="border-left: 2px solid #555; padding-left: 8px; margin-right: 16px;">📄 <u>Paper</u></span>
-<span style="border-left: 2px solid #555; padding-left: 8px;">📊 <u>Dataset</u></span>
+<p align="center">
+  <a href="https://arxiv.org/pdf/2511.02734v1">📄 Paper</a> •
+  <a href="https://github.com/JiayuJeff/CostBench/blob/main/env/data/runtime/queries/queries.json">📊 Dataset</a>
+</p>
 
 This is the official repository for paper "UserBench: An Interactive Gym Environment for User-Centric Agents".
 
 
-CostBench is a benchmark for evaluating the cost optimization capabilities of large language models in tool-using scenarios. The system focuses on testing models' ability to select the lowest-cost path in static/dynamic environments.
+CostBench is a comprehensive benchmark for evaluating multi-turn cost-optimal planning and adaptation capabilities of large language models (LLMs) in tool-using scenarios. The benchmark systematically assesses how LLM agents navigate complex tool-calling environments by testing their ability to: (1) plan cost-optimal multi-step tool invocation sequences in static environments, and (2) dynamically adapt their strategies when tool costs, availability, or preferences change during execution in dynamic environments.
 
 ## 🎯 Project Overview
 
