@@ -65,7 +65,7 @@ OPENAI_BASE_URL=https://api.openai.com/v1
 
 #### Table 4 Results
 
-![Table 4 Results](figures/Table_4.png)
+![](figures/Table_4.png)
 
 Basic run command (Table 4 results):
 
