@@ -1,6 +1,6 @@
 # CostBench
 
-![](figures/Figure_1.png)
+<!-- ![](figures/Figure_1.png) -->
 
 <p align="center">
   <a href="https://arxiv.org/pdf/2511.02734v1">📄 Paper</a> •
