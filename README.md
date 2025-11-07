@@ -45,6 +45,20 @@ pip install -e .
 pip install -r requirements.txt
 ```
 
+### Search Database Setup
+
+```bash
+python env/domains/travel/generate_search_space.py \
+    --generate_test \
+    --test_config_path env/domains/travel/test_travel_config.yaml \
+    --num-times 5000 \
+    --num-time-combinations 5000 \
+    --seed 42
+```
+
+This script will generate the search database for the search tools in our environment.
+Note: The seed value `42` is the random seed used in our experiments. Users can choose other random seeds as needed.
+
 ### Environment Configuration
 
 1. **Local Model Deployment**
