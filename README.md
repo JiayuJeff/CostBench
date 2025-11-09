@@ -7,7 +7,7 @@
   <a href="https://github.com/JiayuJeff/CostBench/blob/main/env/data/runtime/queries/queries.json">📊 Dataset</a>
 </p>
 
-This is the official repository for paper "UserBench: An Interactive Gym Environment for User-Centric Agents".
+This is the official repository for paper "CostBench: Evaluating Multi-Turn Cost-Optimal Planning and Adaptation in Dynamic Environments for LLM Tool-Use Agents".
 
 
 ## 🎯 Project Overview
