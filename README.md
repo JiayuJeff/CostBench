@@ -106,7 +106,7 @@ python env/run.py \
     --num_threads 10 \
     --use_blocker \
     --block_num 1 \
-    --block_type cost_change \
+    --block_mode cost_change \
     --output_dir outputs/
 ```
 

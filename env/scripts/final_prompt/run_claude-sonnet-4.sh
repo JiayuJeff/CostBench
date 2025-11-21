@@ -5,14 +5,14 @@
 
 # 运行模式选择: run_unblocked, run_blocked, run_block_scaling
 # 可以选择多个模式，例如: ("run_unblocked" "run_blocked")
-run_modes=("run_block_scaling")  # 修改这里来选择运行模式，支持多个模式
+run_modes=("run_unblocked")  # 修改这里来选择运行模式，支持多个模式
 
 model="claude-sonnet-4-20250514"
 saved_model="claude-sonnet-4"
 output_dir="final_prompt/$saved_model"
-max_tokens=8192
+max_tokens=16384
 temperature=0.0
-num_threads=30
+num_threads=15
 end_index=-1
 use_stimulation=True
 stimulation_num=1
@@ -20,7 +20,7 @@ block_modes=("cost_change" "preference_change" "ban_tool" "steplen_change")
 log_base_dir="final_prompt"
 
 # 不同模式的refinement_levels配置
-run_unblocked_refinement_levels=(3 4 5)
+run_unblocked_refinement_levels=(5)
 run_blocked_refinement_levels=(2)
 run_block_scaling_refinement_levels=(2)
 
