@@ -3,7 +3,8 @@
 ![](figures/Figure_1.png?v=2)
 
 <p align="center">
-  <a href="https://arxiv.org/pdf/2511.02734v1">📄 Paper</a> •
+  <a href="https://arxiv.org/pdf/2511.02734v1">📄 arXiv</a> •
+  <a href="https://huggingface.co/papers/2511.02734">🤗 Hugging Face Daily Papers</a> •
   <a href="https://github.com/JiayuJeff/CostBench/blob/main/env/data/runtime/queries/queries.json">📊 Dataset</a>
 </p>
 
