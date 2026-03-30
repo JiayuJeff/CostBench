@@ -176,13 +176,10 @@ Contributions are welcome! Please feel free to submit Issues and Pull Requests.
 ## 📚 Citing this work
 
 ```
-@misc{liu2025costbenchevaluatingmultiturncostoptimal,
-      title={CostBench: Evaluating Multi-Turn Cost-Optimal Planning and Adaptation in Dynamic Environments for LLM Tool-Use Agents}, 
-      author={Jiayu Liu and Cheng Qian and Zhaochen Su and Qing Zong and Shijue Huang and Bingxiang He and Yi R. Fung},
-      year={2025},
-      eprint={2511.02734},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2511.02734}, 
+@article{liu2025costbench,
+  title={CostBench: Evaluating Multi-Turn Cost-Optimal Planning and Adaptation in Dynamic Environments for LLM Tool-Use Agents},
+  author={Liu, Jiayu and Qian, Cheng and Su, Zhaochen and Zong, Qing and Huang, Shijue and He, Bingxiang and Fung, Yi R},
+  journal={arXiv preprint arXiv:2511.02734},
+  year={2025}
 }
 ```
