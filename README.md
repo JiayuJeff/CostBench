@@ -3,9 +3,15 @@
 ![](figures/Figure_1.png?v=2)
 
 <p align="center">
-  <a href="https://arxiv.org/pdf/2511.02734v1"><img src="https://cdn.simpleicons.org/arxiv/B31B1B" alt="arXiv" width="16" height="16" valign="middle"> arXiv</a> •
-  <a href="https://huggingface.co/papers/2511.02734">🤗 Hugging Face Daily Papers</a> •
-  <a href="https://huggingface.co/datasets/JiayuJeff/CostBench">🤗 Hugging Face Dataset</a>
+  <a href="https://arxiv.org/pdf/2511.02734v1">
+    <img src="https://img.shields.io/badge/arXiv-2511.02734-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white" alt="arXiv">
+  </a>
+  <a href="https://huggingface.co/papers/2511.02734">
+    <img src="https://img.shields.io/badge/Hugging%20Face-Daily%20Papers-FFD21E?style=for-the-badge&logo=huggingface&logoColor=000000" alt="Hugging Face Daily Papers">
+  </a>
+  <a href="https://huggingface.co/datasets/JiayuJeff/CostBench">
+    <img src="https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?style=for-the-badge&logo=huggingface&logoColor=000000" alt="Hugging Face Dataset">
+  </a>
 </p>
 
 This is the official repository for paper "CostBench: Evaluating Multi-Turn Cost-Optimal Planning and Adaptation in Dynamic Environments for LLM Tool-Use Agents".
