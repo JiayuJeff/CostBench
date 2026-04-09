@@ -3,7 +3,7 @@
 ![](figures/Figure_1.png?v=2)
 
 <p align="center">
-  <a href="https://arxiv.org/pdf/2511.02734v1">📄 arXiv</a> •
+  <a href="https://arxiv.org/pdf/2511.02734v1"><img src="https://img.shields.io/badge/arXiv-2511.02734-b31b1b.svg?logo=arxiv" alt="arXiv"></a> •
   <a href="https://huggingface.co/papers/2511.02734">🤗 Hugging Face Daily Papers</a> •
   <a href="https://huggingface.co/datasets/JiayuJeff/CostBench">🤗 Hugging Face Dataset</a>
 </p>
