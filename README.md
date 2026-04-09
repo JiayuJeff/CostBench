@@ -5,7 +5,7 @@
 <p align="center">
   <a href="https://arxiv.org/pdf/2511.02734v1">📄 arXiv</a> •
   <a href="https://huggingface.co/papers/2511.02734">🤗 Hugging Face Daily Papers</a> •
-  <a href="https://github.com/JiayuJeff/CostBench/blob/main/env/data/runtime/queries/queries.json">📊 Dataset</a>
+  <a href="https://huggingface.co/datasets/JiayuJeff/CostBench">🤗 Hugging Face Dataset</a>
 </p>
 
 This is the official repository for paper "CostBench: Evaluating Multi-Turn Cost-Optimal Planning and Adaptation in Dynamic Environments for LLM Tool-Use Agents".
