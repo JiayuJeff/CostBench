@@ -1,4 +1,4 @@
-# CostBench
+# [ACL 2026 Main] CostBench
 
 ![](figures/Figure_1.png?v=2)
 
@@ -14,7 +14,7 @@
   </a>
 </p>
 
-This is the official repository for paper "CostBench: Evaluating Multi-Turn Cost-Optimal Planning and Adaptation in Dynamic Environments for LLM Tool-Use Agents".
+This is the official repository for paper "CostBench: Evaluating Multi-Turn Cost-Optimal Planning and Adaptation in Dynamic Environments for LLM Tool-Use Agents" accepted in **ACL 2026 Main**.
 
 
 ## 🎯 Project Overview
